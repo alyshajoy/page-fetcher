@@ -9,7 +9,7 @@ let length = "";
 
 request(URL, (error, response, body) => {
 
-  if(error) { // only print error if there is an error
+  if (error) { // only print error if there is an error
     console.log("error:", error);
   }
 
@@ -17,7 +17,7 @@ request(URL, (error, response, body) => {
   length = bodyContents.length.toString(); // place number of characters in body into global variable
 
   fs.writeFile(path, bodyContents, err => { // write contents pulled from given URL to a new file specified by path
-    if(err) {
+    if (err) {
       console.error("error: ", err);
     }
   });
