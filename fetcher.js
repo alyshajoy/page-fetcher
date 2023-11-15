@@ -13,12 +13,10 @@ request(URL, (error, response, body) => {
     console.log("error:", error);
   }
 
-  console.log("response:", response && response.statusCode);
-
   bodyContents = body; // place data from body into global variable
   length = bodyContents.length.toString(); // place number of characters in body into global variable
 
-  fs.writeFile(path, bodyContents, err => { // write contents pulled from given URL to the file specified
+  fs.writeFile(path, bodyContents, err => { // write contents pulled from given URL to a new file specified by path
     if(err) {
       console.error("error: ", err);
     }
